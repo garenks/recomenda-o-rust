@@ -1,112 +1,82 @@
-Sistema de Busca Otimizado para Catálogo de Produtos - MegaStore
-Descrição do Projeto
-Este projeto implementa um sistema de busca eficiente para o catálogo de produtos da MegaStore, um grande e-commerce com milhões de itens. A solução tem como objetivo melhorar a relevância, velocidade e precisão das buscas utilizando estruturas de dados otimizadas, como tabelas hash e técnicas de pré-processamento de texto.
+# Sistema de Busca Otimizado para Catálogo de Produtos - MegaStore
 
-Tecnologias Utilizadas
-Linguagem: Rust
+## 📘 Descrição do Projeto
 
-Crates (bibliotecas):
+Este projeto implementa um sistema de busca eficiente para o catálogo de produtos da MegaStore, um e-commerce com milhões de itens. O objetivo é oferecer resultados relevantes com alta performance, utilizando estruturas como **tabelas hash** e **normalização de texto**, além de um mecanismo de **cache** para buscas repetidas.
 
-unicode-normalization: normalização de strings Unicode
+## 🛠 Tecnologias Utilizadas
 
-std::collections::HashMap: estrutura para tabela hash
+- **Linguagem:** [Rust](https://www.rust-lang.org/)
+- **Crates (bibliotecas):**
+  - [`unicode-normalization`](https://docs.rs/unicode-normalization): para normalizar textos e remover acentuação
+- **Ferramentas:**
+  - `cargo`: gerenciador de pacotes e builds do Rust
+  - `cargo test`: sistema de testes integrados
 
-Ferramentas de Teste:
+## 🚀 Como Executar o Sistema de Busca
 
-cargo test: testes unitários e de integração embutidos no Rust
 
-Como Executar o Sistema de Busca
-Clone o repositório:
 
+
+🧪 Como Executar os Testes
 bash
 Copiar
 Editar
-git clone https://github.com/sua-conta/megastore-search.git
-cd megastore-search
-Compile o projeto:
-
-bash
-Copiar
-Editar
-cargo build --release
-Execute o sistema de busca:
-
-bash
-Copiar
-Editar
-cargo run
-Interaja com o terminal, digitando termos de busca. Para encerrar, digite sair.
-
-Como Executar os Testes
-Execute todos os testes com o comando:
-
-bash
-Copiar
-Editar
+# Executa todos os testes unitários e de integração
 cargo test
-Os testes incluem validação da lógica de busca, funcionamento do cache e pré-processamento de texto.
+💡 Exemplos de Uso
+Entrada do Usuário	Resultado Esperado
+Notebook	Produto com nome "Notebook Acer"
+gas	"Churrasqueira a gás"
+TV	"TV 80 polegadas"
+xbox	Nenhum produto encontrado
 
-Exemplos de Uso
-Entrada do usuário: Notebook
+🏗 Arquitetura do Sistema
+main.rs: módulo principal
 
-Saída esperada: Produto com nome "Notebook Acer"
+Product: estrutura com campos id, name e category
 
-Entrada: gas
+preprocess(): função de normalização e limpeza de texto
 
-Saída: "Churrasqueira a gás"
+HashMap<u32, Product>: armazena os produtos por ID
 
-Entrada: TV
+HashMap<String, Vec<u32>>: cache de buscas para acelerar resultados repetidos
 
-Saída: "TV 80 polegadas"
+🧠 Algoritmos e Estruturas de Dados Utilizados
+Tabelas Hash (HashMap):
 
-Entrada: xbox
+Para armazenar produtos por ID
 
-Saída: "Nenhum produto encontrado para esse termo"
-
-Arquitetura do Sistema
-main.rs:
-
-Módulo principal com a lógica de entrada e busca
-
-Product: struct com campos id, name, e category
-
-Pré-processamento: normalização Unicode + filtro de caracteres ASCII
-
-Cache de buscas: HashMap<String, Vec<u32>> para armazenar buscas já realizadas
-
-Algoritmos e Estruturas de Dados Utilizados
-HashMap:
-
-Para armazenar produtos (id -> Product)
-
-Para cache de termos de busca normalizados (termo -> Vec<id>)
-
-Busca por substring:
-
-Produtos são filtrados com contains() após normalização
+Para cachear termos de busca
 
 Normalização Unicode (NFKD):
 
-Remove acentos e símbolos especiais para melhorar correspondência textual
+Remove acentuação e caracteres especiais
 
-Considerações sobre Desempenho e Escalabilidade
-O uso de HashMap garante busca rápida (O(1) em média) por ID e cache de resultados.
+Torna as buscas mais robustas
 
-O sistema é escalável para milhões de produtos com uso de indexação futura (ex: índices invertidos ou grafos).
+Filtro por substring:
 
-O cache reduz a latência para buscas repetidas drasticamente.
+Produtos são filtrados com contains() sobre nomes normalizados
 
-Testes de desempenho mostraram tempos de resposta médios abaixo de 1ms em buscas simples.
+⚙️ Considerações sobre Desempenho e Escalabilidade
+Busca em O(1) para produtos via ID e para cache de buscas
 
-Contribuições
-Contribuições são bem-vindas! Para contribuir:
+Normalização permite buscas mais inclusivas e sem erros por acento
 
-Fork este repositório
+Cache reduz o tempo de resposta para termos já consultados
 
-Crie uma branch: git checkout -b minha-feature
+Estrutura pronta para ser estendida com grafos e indexadores invertidos para suportar escala maior
 
-Commit suas mudanças: git commit -m 'Minha nova feature'
+🤝 Contribuições
+Contribuições são bem-vindas! Para colaborar:
 
-Push para sua branch: git push origin minha-feature
+Faça um fork deste repositório
 
-Crie um Pull Request
+Crie uma branch com sua feature: git checkout -b minha-feature
+
+Commit suas mudanças: git commit -m 'Adiciona nova feature'
+
+Faça push da branch: git push origin minha-feature
+
+Abra um Pull Request
