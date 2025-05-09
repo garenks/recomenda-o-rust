@@ -13,70 +13,75 @@ Este projeto implementa um sistema de busca eficiente para o catálogo de produt
   - `cargo`: gerenciador de pacotes e builds do Rust
   - `cargo test`: sistema de testes integrados
 
-## 🚀 Como Executar o Sistema de Busca
+##  Como Executar o Sistema de Busca
+
+# Clone o repositório
+git clone https://github.com/sua-conta/megastore-search.git
+cd megastore-search
+
+# Compile o projeto
+cargo build --release
+
+# Execute o sistema
+cargo run
+
+##  Instruções de como executar o sistema de busca
+
+1. **Clone o repositório:**
+
+```bash
+git clone https://github.com/seu-usuario/megastore-search.git
+cd megastore-search
 
 
+##Compile o projeto:##
+cargo build --release
 
 
-🧪 Como Executar os Testes
-bash
-Copiar
-Editar
-# Executa todos os testes unitários e de integração
+##Execute o sistema de busca:##
+cargo run
+
+
+##Instruções de como executar os testes##
+**O projeto utiliza testes unitários e testes de integração. Para executá-los:**
 cargo test
-💡 Exemplos de Uso
-Entrada do Usuário	Resultado Esperado
-Notebook	Produto com nome "Notebook Acer"
-gas	"Churrasqueira a gás"
-TV	"TV 80 polegadas"
-xbox	Nenhum produto encontrado
 
-🏗 Arquitetura do Sistema
-main.rs: módulo principal
 
-Product: estrutura com campos id, name e category
+## Exemplos de uso##
+**Ao executar o sistema, você verá um prompt no terminal:**
+Digite um termo de busca (ou 'sair' para encerrar):
 
-preprocess(): função de normalização e limpeza de texto
 
-HashMap<u32, Product>: armazena os produtos por ID
+## Arquitetura do sistema:##
 
-HashMap<String, Vec<u32>>: cache de buscas para acelerar resultados repetidos
+* src/lib.rs: Lógica principal do sistema (normalização de texto, estrutura Product).
 
-🧠 Algoritmos e Estruturas de Dados Utilizados
-Tabelas Hash (HashMap):
+* src/main.rs: Interface de linha de comando.
 
-Para armazenar produtos por ID
+* tests/search_tests.rs: Testes de integração.
 
-Para cachear termos de busca
+* Utiliza HashMap para estruturação e cache dos produtos.
 
-Normalização Unicode (NFKD):
 
-Remove acentuação e caracteres especiais
+## Algoritmos e estruturas de dados utilizados##
 
-Torna as buscas mais robustas
+* Tabela Hash (HashMap):
 
-Filtro por substring:
+* Para armazenar o catálogo de produtos.
 
-Produtos são filtrados com contains() sobre nomes normalizados
+* Para cachear termos de busca normalizados e acelerar resultados subsequentes.
 
-⚙️ Considerações sobre Desempenho e Escalabilidade
-Busca em O(1) para produtos via ID e para cache de buscas
+* Normalização Unicode (unicode-normalization):
 
-Normalização permite buscas mais inclusivas e sem erros por acento
+* Utilizada para remover acentuação e tornar as buscas mais robustas.
 
-Cache reduz o tempo de resposta para termos já consultados
 
-Estrutura pronta para ser estendida com grafos e indexadores invertidos para suportar escala maior
+##Considerações sobre desempenho e escalabilidade: ##
 
-🤝 Contribuições
-Contribuições são bem-vindas! Para colaborar:
+* O uso de HashMap garante busca em tempo constante (O(1)) para acessos diretos por ID e para cache.
 
-Faça um fork deste repositório
+* O sistema utiliza normalização de strings para melhorar a relevância da busca.
 
-Crie uma branch com sua feature: git checkout -b minha-feature
+* A cache de buscas reduz significativamente o tempo de resposta para consultas repetidas.
 
-Commit suas mudanças: git commit -m 'Adiciona nova feature'
-
-Faça push da branch: git push origin minha-feature
-
-Abra um Pull Request
+* A modularização do código e separação entre binário e biblioteca permite fácil expansão e paralelização futura.
