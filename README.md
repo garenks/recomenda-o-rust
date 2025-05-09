@@ -13,16 +13,16 @@ Este projeto implementa um sistema de busca eficiente para o catálogo de produt
   - `cargo`: gerenciador de pacotes e builds do Rust
   - `cargo test`: sistema de testes integrados
 
-##  Como Executar o Sistema de Busca
+# Como Executar o Sistema de Busca
 
-# Clone o repositório
+## Clone o repositório
 git clone https://github.com/sua-conta/megastore-search.git
 cd megastore-search
 
-# Compile o projeto
+## Compile o projeto
 cargo build --release
 
-# Execute o sistema
+## Execute o sistema
 cargo run
 
 ##  Instruções de como executar o sistema de busca
