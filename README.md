@@ -1,6 +1,6 @@
 # Sistema de Busca Otimizado para Catálogo de Produtos - MegaStore
 
-## 📘 Descrição do Projeto
+## Descrição do Projeto
 
 Este projeto implementa um sistema de busca eficiente para o catálogo de produtos da MegaStore, um e-commerce com milhões de itens. O objetivo é oferecer resultados relevantes com alta performance, utilizando estruturas como **tabelas hash** e **normalização de texto**, além de um mecanismo de **cache** para buscas repetidas.
 
@@ -15,38 +15,38 @@ Este projeto implementa um sistema de busca eficiente para o catálogo de produt
 
 # Como Executar o Sistema de Busca
 
-## Clone o repositório
+### Clone o repositório
 git clone https://github.com/sua-conta/megastore-search.git
 cd megastore-search
 
-## Compile o projeto
+### Compile o projeto
 cargo build --release
 
 ## Execute o sistema
 cargo run
 
-##  Instruções de como executar o sistema de busca
+### Instruções de como executar o sistema de busca
 
 1. **Clone o repositório:**
 git clone https://github.com/seu-usuario/megastore-search.git
 cd megastore-search
 
 
-## Compile o projeto:
+### Compile o projeto:
 cargo build --release
 
 
-## Execute o sistema de busca:
+### Execute o sistema de busca:
 cargo run
 
 
-##Instruções de como executar os testes
-** O projeto utiliza testes unitários e testes de integração. Para executá-los:**
+## Instruções de como executar os testes
+  O projeto utiliza testes unitários e testes de integração. Para executá-los:
 cargo test
 
 
 ## Exemplos de uso
-** Ao executar o sistema, você verá um prompt no terminal:**
+  Ao executar o sistema, você verá um prompt no terminal:
 Digite um termo de busca (ou 'sair' para encerrar):
 
 
