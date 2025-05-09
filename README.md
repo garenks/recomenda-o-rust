@@ -28,27 +28,25 @@ cargo run
 ##  Instruções de como executar o sistema de busca
 
 1. **Clone o repositório:**
-
-
 git clone https://github.com/seu-usuario/megastore-search.git
 cd megastore-search
 
 
-##Compile o projeto:
+## Compile o projeto:
 cargo build --release
 
 
-##Execute o sistema de busca:##
+## Execute o sistema de busca:
 cargo run
 
 
 ##Instruções de como executar os testes
-**O projeto utiliza testes unitários e testes de integração. Para executá-los:**
+** O projeto utiliza testes unitários e testes de integração. Para executá-los:**
 cargo test
 
 
 ## Exemplos de uso
-**Ao executar o sistema, você verá um prompt no terminal:**
+** Ao executar o sistema, você verá um prompt no terminal:**
 Digite um termo de busca (ou 'sair' para encerrar):
 
 
@@ -76,7 +74,7 @@ Digite um termo de busca (ou 'sair' para encerrar):
 * Utilizada para remover acentuação e tornar as buscas mais robustas.
 
 
-##Considerações sobre desempenho e escalabilidade
+## Considerações sobre desempenho e escalabilidade
 
 * O uso de HashMap garante busca em tempo constante (O(1)) para acessos diretos por ID e para cache.
 
