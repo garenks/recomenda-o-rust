@@ -34,7 +34,7 @@ git clone https://github.com/seu-usuario/megastore-search.git
 cd megastore-search
 
 
-##Compile o projeto:##
+##Compile o projeto:
 cargo build --release
 
 
@@ -42,17 +42,17 @@ cargo build --release
 cargo run
 
 
-##Instruções de como executar os testes##
+##Instruções de como executar os testes
 **O projeto utiliza testes unitários e testes de integração. Para executá-los:**
 cargo test
 
 
-## Exemplos de uso##
+## Exemplos de uso
 **Ao executar o sistema, você verá um prompt no terminal:**
 Digite um termo de busca (ou 'sair' para encerrar):
 
 
-## Arquitetura do sistema:##
+## Arquitetura do sistema:
 
 * src/lib.rs: Lógica principal do sistema (normalização de texto, estrutura Product).
 
@@ -63,7 +63,7 @@ Digite um termo de busca (ou 'sair' para encerrar):
 * Utiliza HashMap para estruturação e cache dos produtos.
 
 
-## Algoritmos e estruturas de dados utilizados##
+## Algoritmos e estruturas de dados utilizados
 
 * Tabela Hash (HashMap):
 
@@ -76,7 +76,7 @@ Digite um termo de busca (ou 'sair' para encerrar):
 * Utilizada para remover acentuação e tornar as buscas mais robustas.
 
 
-##Considerações sobre desempenho e escalabilidade: ##
+##Considerações sobre desempenho e escalabilidade
 
 * O uso de HashMap garante busca em tempo constante (O(1)) para acessos diretos por ID e para cache.
 
