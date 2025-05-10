@@ -52,11 +52,7 @@ Digite um termo de busca (ou 'sair' para encerrar):
 
 ## Arquitetura do sistema:
 
-* src/lib.rs: Lógica principal do sistema (normalização de texto, estrutura Product).
-
 * src/main.rs: Interface de linha de comando.
-
-* tests/search_tests.rs: Testes de integração.
 
 * Utiliza HashMap para estruturação e cache dos produtos.
 
