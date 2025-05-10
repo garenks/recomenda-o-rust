@@ -12,6 +12,13 @@ Este projeto implementa um sistema de busca eficiente para o catálogo de produt
 - **Ferramentas:**
   - `cargo`: gerenciador de pacotes e builds do Rust
   - `cargo test`: sistema de testes integrados
+ 
+### Testes realizados:
+- Teste de normalização de texto (remoção de acentos e caracteres especiais).
+- Teste de preservação de caracteres alfanuméricos e espaços na normalização.
+- Teste de busca por nome de produto com correspondência parcial.
+- Teste de funcionamento do cache de buscas.
+- Teste de retorno vazio quando nenhum produto é encontrado.
 
 # Como Executar o Sistema de Busca
 
